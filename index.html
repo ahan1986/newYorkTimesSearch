@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>New York Times Search using their API</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container" style="border: 1px solid black">
+        <div class="Jumbotron" style="border: 1px solid black">
+            <h1 class="text-center">
+            <strong><i class="far fa-newspaper"></i>New York Times Search</strong>
+        </h1>
+        </div>
+<div class="row" >
+    <div class="col-sm-12" style="border: 1px solid black">
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <strong><i class="fa fa-list-alt"></i></strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <!-- Going to create an HTML Form for handling the inputs -->
+                <form role="form">
+                    <!-- Going to create the text box for capturing the search term -->
+                    <div class="form-group">
+                        <label for="search">Search Term:</label>
+                        <input type="text" class="form-control" id="search-term">
+                    </div>
+                    <!-- Capturing the number of records that the user wants to obtain -->
+                    <div class="form-group">
+                        <label for="pwd">Number of Records to Retrieve:</label>
+                        <select class="form-control" id="article-count">
+                            <option value="1">1</option>
+                            <!-- Here I am going to set option 5 as the default -->
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+
+                    <!-- Going to capture the start year -->
+                    <div class="form-group">
+                        <label for="start-year">Start Year (Optional):</label>
+                        <input type="text" class="form-control" id="start-year">
+                    </div>
+
+                    <!-- going to have the final submit button -->
+                    <button type="submit" class="btn btn-default" id="run-search">
+                        <i class="fa fa-search"></i> Search
+                    </button>
+                    <button type="button" class="btn btn-default" id="clear-all">
+                        <i class="fa fa-trash"></i> Clear Results
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- this new row will handle all the retrieved articles -->
+<div class="row">
+    <div class="col-sm-12">
+        <br>
+
+        <!-- this panel will initally be made up of a panel and wells for each of the articles retrieved -->
+        <div class="panel panel-primary" style="border: 1px solid black">
+            <!-- Panel heading for the retrieved articles box -->
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-table"></i> Top Articles</h3>
+            </div>
+
+            <!-- This is the main panel that will hold each of the resulting articles -->
+            <div class="panel-body" id="well-section">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Footer portion -->
+<div class="row">
+    <div class="col-sm-12">
+
+        <!-- creating a line break -->
+        <hr>
+        <h5 class="text-center">
+            <small><i class="fas fa-thumbs-up"></i>  Trying to learn from professionals  <i class="fas fa-thumbs-up"></i></small>
+        </h5>
+    </div>
+</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
